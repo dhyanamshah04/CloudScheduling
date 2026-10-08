@@ -5,6 +5,7 @@ WORKDIR /app
 COPY src /app/src
 COPY data /app/data
 
+RUN mkdir -p /app/classes
 RUN javac -d /app/classes /app/src/*.java
 
 CMD ["java", "-cp", "/app/classes", "CloudServer"]
